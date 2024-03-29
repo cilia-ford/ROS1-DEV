@@ -23,5 +23,5 @@
 			]
 		}
 	},
-	"postCreateCommand": "sudo -u developer bash /post-create-script.sh"
+	"postCreateCommand": "bash /post-create-script.sh"
 }

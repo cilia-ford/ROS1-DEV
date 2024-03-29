@@ -4,11 +4,11 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ../../src:/workspace/src
+      - ../../.:/workspace/.
       - /tmp/.X11-unix:/tmp/.X11-unix # Expose X11 socket
       - ${XAUTHORITY:-$HOME/.Xauthority}:/home/developer/.Xauthority # Mount Xauthority file
     environment:
-      - SSH_KEY=${SSH_KEY}
+      - SSH_KEY=$SSH_KEY
       - DISPLAY=${DISPLAY}
       - XAUTHORITY=/home/developer/.Xauthority # Set Xauthority file path
     command: sleep infinity
