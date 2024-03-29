@@ -1,3 +1,4 @@
+# override.yml
 services:
   ros-dev:
     build:
@@ -10,5 +11,3 @@ services:
       - vnc
     networks:
       - x11
-networks:
-  x11:
