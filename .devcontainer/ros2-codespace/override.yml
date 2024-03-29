@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     command: sleep infinity
     environment:
-      - SSH_KEY=${SSH_KEY}
+      - SSH_KEY=""
       - DISPLAY=vnc:0.0
     depends_on:
       - vnc
