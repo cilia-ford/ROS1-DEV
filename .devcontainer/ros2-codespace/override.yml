@@ -16,4 +16,4 @@ services:
 
 secrets:
   ssh-key:
-    file: null
+    file: /non-existing-file
