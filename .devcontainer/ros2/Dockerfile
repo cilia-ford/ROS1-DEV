@@ -9,7 +9,7 @@ RUN apt-get update && \
 RUN useradd -m -s /bin/bash developer && \
     echo "developer ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers 
 
-RUN mkdir -p /home/developer
+RUN mkdir -p /home/developer/.ssh
 
 RUN echo "#!/bin/bash" >> /post-create-script.sh && \
     echo "sudo chown -R developer:developer /home/developer" >> /post-create-script.sh && \
