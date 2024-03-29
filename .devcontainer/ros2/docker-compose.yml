@@ -1,0 +1,19 @@
+services:
+  ros-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../../.:/workspace/src
+      - /tmp/.X11-unix:/tmp/.X11-unix # Expose X11 socket
+      - ${XAUTHORITY:-$HOME/.Xauthority}:/home/developer/.Xauthority # Mount Xauthority file
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XAUTHORITY=/home/developer/.Xauthority # Set Xauthority file path
+    command: sleep infinity
+    user: developer
+    secrets:
+      - ssh-key
+secrets:
+  ssh-key:
+    file: ${SSH_FILE}
