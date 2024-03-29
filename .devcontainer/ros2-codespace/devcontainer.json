@@ -1,7 +1,7 @@
 {
 	"name": "ros-dev-codespace",
-	"remoteUser": "root",
-	"dockerComposeFile": ["docker-compose.yml"],
+	"remoteUser": "developer",
+	"dockerComposeFile": ["compose.yml"],
 	"service": "ros-dev",
 	"runServices": ["ros-dev","vnc"],
 	
@@ -23,4 +23,5 @@
 			]
 		}
 	},
+	"postCreateCommand": "sudo -u developer bash /post-create-script.sh"
 }

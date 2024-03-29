@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ../../.:/workspace/src
+      - ../../src:/workspace/src
       - /tmp/.X11-unix:/tmp/.X11-unix # Expose X11 socket
       - ${XAUTHORITY:-$HOME/.Xauthority}:/home/developer/.Xauthority # Mount Xauthority file
     environment:

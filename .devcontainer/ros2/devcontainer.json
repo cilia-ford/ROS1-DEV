@@ -1,7 +1,7 @@
 {
 	"name": "ros-dev",
 	"remoteUser": "developer",
-	"dockerComposeFile": ["docker-compose.yml"],
+	"dockerComposeFile": ["compose.yml"],
 	"service": "ros-dev",
 	"runServices": ["ros-dev"],
 	
