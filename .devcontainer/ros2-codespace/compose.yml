@@ -18,3 +18,4 @@ services:
       - x11
 networks:
   x11:
+    driver: bridge
