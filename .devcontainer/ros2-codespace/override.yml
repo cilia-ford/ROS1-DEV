@@ -11,3 +11,9 @@ services:
       - vnc
     networks:
       - x11
+    secrets:
+      - ssh-key
+
+secrets:
+  ssh-key:
+    file: null
