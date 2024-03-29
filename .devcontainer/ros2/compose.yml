@@ -3,6 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    environment: 
+      - SSH_KEY=${SSH_KEY}
     volumes:
       - ../../src:/workspace/src
       - /tmp/.X11-unix:/tmp/.X11-unix # Expose X11 socket
@@ -12,8 +14,3 @@ services:
       - XAUTHORITY=/home/developer/.Xauthority # Set Xauthority file path
     command: sleep infinity
     user: developer
-    secrets:
-      - ssh-key
-secrets:
-  ssh-key:
-    file: ${SSH_FILE}
