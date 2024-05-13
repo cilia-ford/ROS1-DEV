@@ -1,6 +1,6 @@
 services:
   ros-dev:
-    image: rishikesavanramesh/ros2-dev
+    image: $PROJECT_DOCKER_IMAGE
     volumes:
       - ../../.:/workspace/.
       - /tmp/.X11-unix:/tmp/.X11-unix # Expose X11 socket
