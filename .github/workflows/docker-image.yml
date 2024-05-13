@@ -34,7 +34,7 @@ jobs:
       
       - name: Set Docker repository name
         id: set_docker_repo_name
-        run: echo "{docker_repo_name}=$(echo ${GITHUB_REPOSITORY#*/} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+        run: echo "docker_repo_name=$(echo ${GITHUB_REPOSITORY#*/} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
         
       - name: Build Docker image
         run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/${{ steps.set_docker_repo_name.outputs.docker_repo_name }}:latest -t ${{ secrets.DOCKERHUB_USERNAME }}/${{ steps.set_docker_repo_name.outputs.docker_repo_name }}:$(date +"%Y%m%d%H%M%S") .devcontainer/ros2/.
