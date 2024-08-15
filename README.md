@@ -14,6 +14,7 @@ might also wanna add linting and batches for verifing features...
 - ~~EP19 x11 TO USE XEPHYR~~
 - ~~EP05 update the file execution permission level for the .sh files in the root of this workspace ( build , setup, test bash scripts )~~
 - ~~DROPPED: EP21 tasks not opening inside devcontainer using keybindings ctrl + ;~~
+- ~~EP18 workspace ownership needs to be updated~~
 - EP04 also keep an eye for wsl2 development to know updates about usb integration in dev contianers
 - EP08 if codespace add the methods and tools if possible to connect local devices to the codespacee and create a compatible companion script 
 - EP09 use a mock package to have the dev dependencies and once its been to prod , we can do something like colcon_ignore inside the dir.
@@ -25,7 +26,6 @@ might also wanna add linting and batches for verifing features...
 - EP14 add contributing guide (devcontainer and so) along with the above how to run with in the readme 
 - EP15 add the platformio within here 
 - EP17 colcon hooks location updated in jazzy, ( why not maintain two branch )
-- EP18 workspace ownership needs to be updated
 - EP20 RSS FEED OF github action builds of ros and other projects
 - EP22 add templating from rtworking group into tasks
 - EP23 why not mounting everything inside of /tmp/workspace so that one can easily save the contaienr for tools and softwares and the source code remains clean outside of container.
