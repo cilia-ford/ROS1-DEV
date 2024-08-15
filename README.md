@@ -18,7 +18,9 @@ might also wanna add linting and batches for verifing features...
 - ~~EP02 post-create-script.sh make it inline file if possible~~ 
 - ~~EP11 mount /dev as devices instead of volumes add that so it is working if devices are present in local devcontainers or in the remote codespace~~
 - ~~DROPPED : EP16 add username uid and gid from the devcontainer, however much that is possible... and care for that the packages generated from ros2 pkg use the system username as the maintainer name :: WILL BE CARED ABOUT IN TEMPLATING~~
-- EP09 use a mock package to have the dev dependencies and once its been to prod , we can do something like colcon_ignore inside the dir.
+- ~~DROPPED : EP09 use a mock package to have the dev dependencies and once its been to prod , we can do something like colcon_ignore inside the dir. :: EVERYTHING FOR DEVELOPMENT WILL BE IN DEVCONTAINER~~
+
+
 - EP10 need a add an additional file that will be sourced in post-scripts(one time sourceable or put in bashrc upto the user but need to provide provisions) which is for the particular project.
 
 - EP22 add templating from rtworking group into tasks
