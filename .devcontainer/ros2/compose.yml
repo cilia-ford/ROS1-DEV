@@ -5,6 +5,7 @@ services:
     volumes:
       - ../../.:/workspace/.:rw
       - /tmp/.X11-unix:/tmp/.X11-unix # Expose X11 socket
+      - /dev:/dev:rw
     environment:
       - SSH_KEY=$SSH_KEY
       - DISPLAY=:45
