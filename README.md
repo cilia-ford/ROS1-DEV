@@ -15,9 +15,9 @@ might also wanna add linting and batches for verifing features...
 - ~~EP05 update the file execution permission level for the .sh files in the root of this workspace ( build , setup, test bash scripts )~~
 - ~~DROPPED: EP21 tasks not opening inside devcontainer using keybindings ctrl + ;~~
 - ~~EP18 workspace ownership needs to be updated~~
+- ~~EP02 post-create-script.sh make it inline file if possible~~ 
 - EP09 use a mock package to have the dev dependencies and once its been to prod , we can do something like colcon_ignore inside the dir.
 - EP10 need a add an additional file that will be sourced in post-scripts(one time sourceable or put in bashrc upto the user but need to provide provisions) which is for the particular project.
-- EP02 post-create-script.sh make it inline file if possible 
 - EP11 mount /dev as devices instead of volumes add that so it is working if devices are present in local devcontainers or in the remote codespace
 
 - EP22 add templating from rtworking group into tasks
