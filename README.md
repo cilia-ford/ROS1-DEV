@@ -30,7 +30,7 @@ might also wanna add linting and batches for verifing features...
 
 
 
-- EP07 guess need to chown -r developer /tmp in post-start.script
+- ~~EP07 guess need to chown -r developer /tmp in post-start.script~~
 
 
 
