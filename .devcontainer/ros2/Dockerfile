@@ -15,6 +15,7 @@ RUN mkdir -p /home/developer/.ssh
 RUN echo "#!/bin/bash" >> /post-create-script.sh && \
     echo "sudo apt update -y" >> /post-create-script.sh && \
     echo "rosdep update "  >> /post-create-script.sh && \
+    echo "sudo chmod +x /workspace/*.sh"  >> /post-create-script.sh && \
     echo "echo 'source /opt/ros/humble/setup.bash' >> ~/.bashrc" >> /post-create-script.sh && \
     echo "source /opt/ros/humble/setup.bash" >> /post-create-script.sh && \
     echo "echo 'source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash' >> ~/.bashrc" >> /post-create-script.sh && \
