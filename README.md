@@ -31,7 +31,7 @@ might also wanna add linting and batches for verifing features...
 
 
 
-- EP19 x11 TO USE XEPHYR
+- ~~EP19 x11 TO USE XEPHYR~~
 - EP16 add username uid and gid from the devcontainer, however much that is possible... and care for that the packages generated from ros2 pkg use the system username as the maintainer name
 - EP07 guess need to chown -r developer /tmp in post-start.script
 
