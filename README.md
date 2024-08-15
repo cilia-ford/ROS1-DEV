@@ -11,6 +11,7 @@ might also wanna add linting and batches for verifing features...
 
 - ~~EP01 get and update deps using rosdep .~~
 - ~~EP06 use prebuild docker image in the compose ( with ep01 of this specific repo)~~ 
+- ~~EP19 x11 TO USE XEPHYR~~
 - ~~EP05 update the file execution permission level for the .sh files in the root of this workspace ( build , setup, test bash scripts )~~
 - EP04 also keep an eye for wsl2 development to know updates about usb integration in dev contianers
 - EP08 if codespace add the methods and tools if possible to connect local devices to the codespacee and create a compatible companion script 
@@ -31,7 +32,6 @@ might also wanna add linting and batches for verifing features...
 
 
 
-- ~~EP19 x11 TO USE XEPHYR~~
 - EP16 add username uid and gid from the devcontainer, however much that is possible... and care for that the packages generated from ros2 pkg use the system username as the maintainer name
 - EP07 guess need to chown -r developer /tmp in post-start.script
 
