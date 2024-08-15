@@ -1,9 +1,10 @@
 services:
   ros-dev:
-    image: rishikesavanramesh/ros2-dev # change this to your docker image
+    # image: rishikesavanramesh/ros2-dev # change this to your docker image
+    build: .
     volumes:
-      - ../../.:/workspace/.
-      - /tmp/.X11-unix:/tmp/.X11-unix # Expose X11 socket
+      - ../../.:/workspace/.:rw
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw # Expose X11 socket
       - ${XAUTHORITY:-$HOME/.Xauthority}:/home/developer/.Xauthority # Mount Xauthority file
     environment:
       - SSH_KEY=$SSH_KEY
