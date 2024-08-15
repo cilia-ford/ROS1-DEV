@@ -19,6 +19,7 @@ might also wanna add linting and batches for verifing features...
 - ~~EP11 mount /dev as devices instead of volumes add that so it is working if devices are present in local devcontainers or in the remote codespace~~
 - ~~DROPPED : EP16 add username uid and gid from the devcontainer, however much that is possible... and care for that the packages generated from ros2 pkg use the system username as the maintainer name :: WILL BE CARED ABOUT IN TEMPLATING~~
 - ~~DROPPED : EP09 use a mock package to have the dev dependencies and once its been to prod , we can do something like colcon_ignore inside the dir. :: EVERYTHING FOR DEVELOPMENT WILL BE IN DEVCONTAINER~~
+- ~~EP07 guess need to chown -r developer /tmp in post-start.script~~
 
 
 - ~~DROPPED : EP10 need a add an additional file that will be sourced in post-scripts(one time sourceable or put in bashrc upto the user but need to provide provisions) which is for the particular project. :: DROPPING IN MERCY OF CONFIGURED TASKS~~
@@ -30,7 +31,6 @@ might also wanna add linting and batches for verifing features...
 
 
 
-- EP07 guess need to chown -r developer /tmp in post-start.script
 
 
 
@@ -48,3 +48,13 @@ might also wanna add linting and batches for verifing features...
 - EP14 add contributing guide (devcontainer and so) along with the above how to run with in the readme 
 
 - EP13 give a robot start script here in the repo, for anyone to just run it and pull the build foss docker image (or probably private docker repo prompting a docker access secret to enter) 
+
+
+
+### issues : 
+- i01: configured task ( purge failed saying cannot allocate ptr in this ros-tws-shell) :: solved when not mounting /dev:/dev have to look into it
+- setup-robot-description added the add_test twice in cmakelist, which causing failure of the package
+- when templating hardware interface package the cmake cannot find some files that are of hardware interface package and related, should preinstall any necessary packages for the template to work when giving the template option :: updated:: after rosdep install deps , it is reduced to only ament_add_gmock cmake command not found
+
+
+- also add .gitkeep in templated empty folder or keep the .gitkeep within the templates
