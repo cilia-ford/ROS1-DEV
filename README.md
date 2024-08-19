@@ -53,8 +53,8 @@ might also wanna add linting and batches for verifing features...
 
 ### issues : 
 - i01: configured task ( purge failed saying cannot allocate ptr in this ros-tws-shell) :: solved when not mounting /dev:/dev have to look into it
-- setup-robot-description added the add_test twice in cmakelist, which causing failure of the package
-- when templating hardware interface package the cmake cannot find some files that are of hardware interface package and related, should preinstall any necessary packages for the template to work when giving the template option :: updated:: after rosdep install deps , it is reduced to only ament_add_gmock cmake command not found
+- setup-robot-description added the add_test twice in cmakelist, which causing failure of the package // it seems running init of setup-robot-description twice without removing dir is the issue..
+- when templating hardware interface package the cmake cannot find some files that are of hardware interface package and related, should preinstall any necessary packages for the template to work when giving the template option :: updated:: after rosdep install deps , it is reduced to only ament_add_gmock cmake command not found  :: updated ::: adding this line solves the error ```find_package(ament_cmake_gmock REQUIRED)```
 
 
-- also add .gitkeep in templated empty folder or keep the .gitkeep within the templates
+- also add .gitkeep in templated empty folder or keep the .gitkeep within the templates :: mostly it is done internally
