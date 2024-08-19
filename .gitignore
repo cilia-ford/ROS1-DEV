@@ -1,7 +1,6 @@
 src/*
 
 !src/.gitkeep
-!src/ros2.repos
 
 
 build
