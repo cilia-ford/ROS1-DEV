@@ -7,6 +7,7 @@
       },
       "includePath": [
         "/opt/ros/humble/include/**",
+        "${workspaceFolder}/src/**/include/**",
         "/usr/include/**"
       ],
       "name": "ROS",
