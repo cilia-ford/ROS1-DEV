@@ -5,9 +5,14 @@ services:
     volumes:
       - ../../.:/workspace/.:rw
       - /tmp/.X11-unix:/tmp/.X11-unix # Expose X11 socket
-      # - /dev:/dev
+      - /dev:/dev
     environment:
       - SSH_KEY=$SSH_KEY
-      - DISPLAY=:45
+      - DISPLAY=:45 # ( see https://gist.github.com/RishikesavanRamesh/d8c085c958bc11e8562cd3db297e4eb8 )
     command: sleep infinity
     user: developer
+    device_cgroup_rules: # (ref https://www.kernel.org/doc/Documentation/admin-guide/devices.txt )
+      # first THREE of each of the following types of devices can be used inside the dev container
+      - 'c 13:[012] rwm' # Input core ( here joystick only)
+      - 'c 16[67]:[012] rwm' # ACM USB modems & its alternate devices
+      - 'c 18[89]:[012] rwm' # USB serial converters & its alternate devices  
