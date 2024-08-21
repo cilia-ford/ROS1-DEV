@@ -30,7 +30,7 @@ might also wanna add linting and batches for verifing features...
 - EP23 why not mounting everything inside of /tmp/workspace so that one can easily save the contaienr for tools and softwares and the source code remains clean outside of container.
 
 
-
+- EP24 should update to vulcanexus humble base image
 
 
 
@@ -58,3 +58,48 @@ might also wanna add linting and batches for verifing features...
 
 
 - also add .gitkeep in templated empty folder or keep the .gitkeep within the templates :: mostly it is done internally
+
+
+- check if adding the user developer to dialout group is needed
+- also add docker security tesing reports convincingly  
+
+############
+
+developer@0a7a70eb1536:<humble>workspace$ ros2 daemon status
+The daemon is running
+developer@0a7a70eb1536:<humble>workspace$ sudo apt install ros-humble-demo-cpp-nodes -y 
+sudo: /etc/sudoers is owned by uid 1000, should be 0
+sudo: no valid sudoers sources found, quitting
+sudo: error initializing audit plugin sudoers_audit
+developer@0a7a70eb1536:<humble>workspace$ sudo apt update
+sudo: /etc/sudoers is owned by uid 1000, should be 0
+sudo: no valid sudoers sources found, quitting
+sudo: error initializing audit plugin sudoers_audit
+developer@0a7a70eb1536:<humble>workspace$ apt update
+Reading package lists... Done
+E: Could not open lock file /var/lib/apt/lists/lock - open (13: Permission denied)
+E: Unable to lock directory /var/lib/apt/lists/ observed when silver bullet hit hard
+
+
+
+------------------------------------
+
+
+developer@6953e98b98e0:/workspace$ sudo
+sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
+developer@6953e98b98e0:/workspace$ sudo
+usage: sudo -h | -K | -k | -V
+usage: sudo -v [-ABknS] [-g group] [-h host] [-p prompt] [-u user]
+usage: sudo -l [-ABknS] [-g group] [-h host] [-p prompt] [-U user] [-u user] [command]
+usage: sudo [-ABbEHknPS] [-r role] [-t type] [-C num] [-D directory] [-g group] [-h host] [-p prompt] [-R directory] [-T timeout] [-u user] [VAR=value] [-i|-s]
+            [<command>]
+usage: sudo -e [-ABknS] [-r role] [-t type] [-C num] [-D directory] [-g group] [-h host] [-p prompt] [-R directory] [-T timeout] [-u user] file ...
+developer@6953e98b98e0:/workspace$ # have run the following as root inside the container ,
+developer@6953e98b98e0:/workspace$ # chown root:root /usr/bin/sudo
+developer@6953e98b98e0:/workspace$ # chmod 4755 /usr/bin/sudo
+developer@6953e98b98e0:/workspace$ 
+
+
+also changed for /etc/sudoers file
+
+############
