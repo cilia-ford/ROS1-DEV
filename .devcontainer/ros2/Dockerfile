@@ -17,14 +17,17 @@ RUN mkdir -p /home/developer/.ssh
 COPY <<EOF /post-create-script.sh
 #!/bin/bash
 
-sudo apt update -y
-rosdep update
-sudo chmod +x /workspace/*.sh
 echo 'source /opt/ros/humble/setup.bash' >> ~/.bashrc
+echo 'source /opt/vulcanexus/humble/setup.bash' >> ~/.bashrc
+
 source /opt/ros/humble/setup.bash
+source /opt/vulcanexus/humble/setup.bash
+
 echo 'source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash' >> ~/.bashrc
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+
 echo -e "\$SSH_KEY" > /home/developer/.ssh/id_rsa && chmod 600 /home/developer/.ssh/id_rsa
+bash /workspace/.scripts/print_packages.bash
 EOF
 
 

@@ -28,6 +28,7 @@ might also wanna add linting and batches for verifing features...
 - ~~EP12 need to use the rosteamworkspace folder structure for development~~
 
 - ~~EP22 add templating from rtworking group into tasks~~
+- ~~EP27 create a list of softwares that are installed in the system , and make that image specific and also show it in the startup or print it on console.~~ 
 
 - EP23 why not mounting everything inside of /tmp/workspace so that one can easily save the contaienr for tools and softwares and the source code remains clean outside of container.
 
@@ -66,7 +67,6 @@ might also wanna add linting and batches for verifing features...
 - check if adding the user developer to dialout group is needed
 - also add docker security tesing reports convincingly  
 - make the readme open when starting devcontainer
-- create a list of softwares that are installed in the system , and make that image specific and also show it in the startup or print it on console. 
 - revise the post install script,(ssh keys not needed, also rosdep init is also not require, rosdep init should be moved to tasks)
 ############
 
