@@ -24,13 +24,14 @@ might also wanna add linting and batches for verifing features...
 
 - ~~DROPPED : EP10 need a add an additional file that will be sourced in post-scripts(one time sourceable or put in bashrc upto the user but need to provide provisions) which is for the particular project. :: DROPPING IN MERCY OF CONFIGURED TASKS~~
 
+- ~~EP24 should update to vulcanexus humble base image~~
+
 - EP22 add templating from rtworking group into tasks
 - EP12 need to use the rosteamworkspace folder structure for development
 
 - EP23 why not mounting everything inside of /tmp/workspace so that one can easily save the contaienr for tools and softwares and the source code remains clean outside of container.
 
 
-- EP24 should update to vulcanexus humble base image
 
 
 

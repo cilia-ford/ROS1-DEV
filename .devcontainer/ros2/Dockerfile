@@ -1,4 +1,4 @@
-FROM ros:humble
+FROM eprosima/vulcanexus:humble-base
 
 # # Install sudo
 RUN <<EOF
