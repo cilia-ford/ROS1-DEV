@@ -8,7 +8,10 @@
             "label": "build",
             "detail": "Build workspace (default)",
             "type": "shell",
-            "command": "./build.sh",
+            "command": "./.scripts/build.sh",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -19,10 +22,11 @@
             "label": "debug",
             "detail": "Build workspace (debug)",
             "type": "shell",
-            "command": "./build.sh",
+            "command": "./.scripts/build.sh",
             "options": {
                 "env": {
-                    "BUILD_TYPE": "Debug"
+                    "BUILD_TYPE": "Debug",
+                    "cwd": "${workspaceFolder}"
                 }
             },
             "group": "build",
@@ -33,7 +37,10 @@
             "label": "test",
             "detail": "Run all unit tests and show results.",
             "type": "shell",
-            "command": "./test.sh",
+            "command": "./.scripts/test.sh",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "group": {
                 "kind": "test",
                 "isDefault": true
@@ -45,6 +52,9 @@
             "detail": "Run the clean target",
             "type": "shell",
             "command": "colcon build --cmake-target clean",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "problemMatcher": "$gcc"
         },
         {
@@ -52,14 +62,20 @@
             "detail": "Purge workspace by deleting all generated files.",
             "type": "shell",
             "command": "sudo rm -fr build install log; sudo py3clean .",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "problemMatcher": []
         },
-        // Workspace editing tasks
+        // Workspace editing tasks /// change these to rtw 
         {
             "label": "new ament_cmake package",
             "detail": "Create a new ROS cpp package from a template.",
             "type": "shell",
             "command": "source /opt/ros/humble/setup.bash ; ros2 pkg create --destination-directory src --build-type ament_cmake ${input:package}",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "problemMatcher": []
         },
         {
@@ -67,6 +83,9 @@
             "detail": "Create a new ROS python package from a template.",
             "type": "shell",
             "command": "source /opt/ros/humble/setup.bash ; ros2 pkg create --destination-directory src --build-type ament_python ${input:package}",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "problemMatcher": []
         },
         {
@@ -74,6 +93,9 @@
             "detail": "Use vcs to import modules specified by a workspace/rosinstall file.",
             "type": "shell",
             "command": "vcs import < src/ros2.repos src",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "problemMatcher": []
         },
         {
@@ -81,6 +103,9 @@
             "detail": "Use vcs to update repositories in src to workspace file.",
             "type": "shell",
             "command": "vcs export src > src/ros2.repos",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "problemMatcher": []
         },
         {
@@ -88,13 +113,19 @@
             "detail": "Install all dependencies specified in the workspaces package.xml files.",
             "type": "shell",
             "command": "sudo apt-get update && rosdep update && rosdep install --from-paths src --ignore-src -y",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "problemMatcher": []
         },
         {
             "label": "setup",
             "detail": "Set up the workspace",
             "type": "shell",
-            "command": "./setup.sh",
+            "command": "./.scripts/setup.sh",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
             "problemMatcher": []
         },
     ],
