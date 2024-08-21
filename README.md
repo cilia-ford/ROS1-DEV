@@ -25,14 +25,15 @@ might also wanna add linting and batches for verifing features...
 - ~~DROPPED : EP10 need a add an additional file that will be sourced in post-scripts(one time sourceable or put in bashrc upto the user but need to provide provisions) which is for the particular project. :: DROPPING IN MERCY OF CONFIGURED TASKS~~
 
 - ~~EP24 should update to vulcanexus humble base image~~
+- ~~EP12 need to use the rosteamworkspace folder structure for development~~
 
-- EP22 add templating from rtworking group into tasks
-- EP12 need to use the rosteamworkspace folder structure for development
+- ~~EP22 add templating from rtworking group into tasks~~
 
 - EP23 why not mounting everything inside of /tmp/workspace so that one can easily save the contaienr for tools and softwares and the source code remains clean outside of container.
 
+- EP25 tasks for gdb also 
 
-
+- EP26 SHOULD ADD THE AUTO LISTING OF DIRS FOR INPUT FOR RTW TASKS
 
 
 ### for later
@@ -49,6 +50,7 @@ might also wanna add linting and batches for verifing features...
 - EP14 add contributing guide (devcontainer and so) along with the above how to run with in the readme 
 
 - EP13 give a robot start script here in the repo, for anyone to just run it and pull the build foss docker image (or probably private docker repo prompting a docker access secret to enter) 
+
 
 
 

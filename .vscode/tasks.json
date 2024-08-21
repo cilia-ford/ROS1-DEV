@@ -88,6 +88,102 @@
             },
             "problemMatcher": []
         },
+
+        {
+            "label": "new ros2 package",
+            "detail": "Create a new ROS 2 package from rtw template.",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "ROS_WS=${workspaceFolder} ${workspaceFolder}/ros_team_workspace/scripts/create-new-package.bash  ${input:package} '${input:packageDescription}'"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/src"
+            },
+        },
+
+        {
+            "label": "setup robot description",
+            "detail": "Setup robot description from rtw template.",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "ROS_WS=${workspaceFolder} ${workspaceFolder}/ros_team_workspace/scripts/setup-robot-description.bash  ${input:robotName}"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/src/${input:dirName}"
+            },
+        },
+
+        {
+            "label": "setup robot bringup",
+            "detail": "Setup robot bringup from rtw template.",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "ROS_WS=${workspaceFolder} ${workspaceFolder}/ros_team_workspace/scripts/setup-robot-bringup.bash  ${input:robotName}  ${input:descriptionPackageName}"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/src/${input:dirName}"
+            },
+        },
+
+        {
+            "label": "setup ros2_control control hardware",
+            "detail": "Setup ros2_control control hardware from rtw template.",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "ROS_WS=${workspaceFolder} ${workspaceFolder}/ros_team_workspace/scripts/ros2_control/setup-hardware-interface-package.bash  ${input:fileName}  ${input:className}"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/src/${input:dirName}"
+            },
+        },
+
+        {
+            "label": "setup ros2_control controller",
+            "detail": "Setup ros2_control controller from rtw template.",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "ROS_WS=${workspaceFolder} ${workspaceFolder}/ros_team_workspace/scripts/ros2_control/setup-controller-package.bash  ${input:fileName} ."
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/src/${input:dirName}"
+            },
+        },
+
         {
             "label": "import from workspace file",
             "detail": "Use vcs to import modules specified by a workspace/rosinstall file.",
@@ -134,6 +230,36 @@
             "id": "package",
             "type": "promptString",
             "description": "Package name"
+        },
+        {
+            "id": "packageDescription",
+            "type": "promptString",
+            "description": "Package Description"
+        },
+        {
+            "id": "robotName",
+            "type": "promptString",
+            "description": "Robot Name"
+        },
+        {
+            "id": "dirName",
+            "type": "promptString",
+            "description": "Base Directory"
+        },
+        {
+            "id": "descriptionPackageName",
+            "type": "promptString",
+            "description": "Description Package Name"
+        },
+        {
+            "id": "fileName",
+            "type": "promptString",
+            "description": "File Name"
+        },
+        {
+            "id": "className",
+            "type": "promptString",
+            "description": "Class Name"
         }
     ]
 }
