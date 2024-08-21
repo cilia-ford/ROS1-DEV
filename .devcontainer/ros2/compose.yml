@@ -16,13 +16,14 @@ services:
     command: sleep infinity
     user: developer
 
-    security_opt: # should only be used in developement 
+    security_opt: # strictly for developement 
       - seccomp:unconfined
     cap_add:
       - SYS_PTRACE
 
     device_cgroup_rules: # (ref https://www.kernel.org/doc/Documentation/admin-guide/devices.txt )
-      # first THREE of each of the following types of devices can be used inside the dev container
-      - 'c 13:[012] rwm' # Input core ( here joystick only)
-      - 'c 16[67]:[012] rwm' # ACM USB modems & its alternate devices
-      - 'c 18[89]:[012] rwm' # USB serial converters & its alternate devices    
+      - 'c 13:* rwm'  # Input core ( eg : joystick)
+      - 'c 166:* rwm' # ACM USB modems 
+      - 'c 167:* rwm'   # & its alternate devices
+      - 'c 188:* rwm' # USB serial converters 
+      - 'c 189:* rwm'   # 1& its alternate devices    
