@@ -31,12 +31,17 @@ might also wanna add linting and batches for verifing features...
 - ~~EP27 create a list of softwares that are installed in the system , and make that image specific and also show it in the startup or print it on console.~~ 
 
 - EP23 why not mounting everything inside of /tmp/workspace so that one can easily save the contaienr for tools and softwares and the source code remains clean outside of container.
+- ~~revise the post install script,(ssh keys not needed, also rosdep init is also not require, rosdep init should be moved to tasks)~~ :: completed
+
+- ~~Dropped:: EP13 give a robot start script here in the repo, for anyone to just run it and pull the build foss docker image (or probably private docker repo prompting a docker access secret to enter) :: dropped as this setup is entirely for development while this idea is for deployment or demo ~~
 
 - EP25 tasks for gdb also 
 
 - EP26 SHOULD ADD THE AUTO LISTING OF DIRS FOR INPUT FOR RTW TASKS
 
-
+- check if adding the user developer to dialout group is needed
+- also add docker security tesing reports convincingly  
+- make the readme open when starting devcontainer
 ### for later
 
 - EP03 check and find if we can control the default location where the rosdep install python pacakges( using envs) and do multiple versions of things in one program using .dsv.in files' help // solved ; only needed in jazzy 
@@ -50,8 +55,6 @@ might also wanna add linting and batches for verifing features...
 
 - EP14 add contributing guide (devcontainer and so) along with the above how to run with in the readme 
 
-- EP13 give a robot start script here in the repo, for anyone to just run it and pull the build foss docker image (or probably private docker repo prompting a docker access secret to enter) 
-
 
 
 
@@ -64,10 +67,7 @@ might also wanna add linting and batches for verifing features...
 - also add .gitkeep in templated empty folder or keep the .gitkeep within the templates :: mostly it is done internally
 
 
-- check if adding the user developer to dialout group is needed
-- also add docker security tesing reports convincingly  
-- make the readme open when starting devcontainer
-- revise the post install script,(ssh keys not needed, also rosdep init is also not require, rosdep init should be moved to tasks)
+
 ############
 
 developer@0a7a70eb1536:<humble>workspace$ ros2 daemon status
