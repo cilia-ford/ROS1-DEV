@@ -11,6 +11,10 @@ services:
       - DISPLAY=:45 # ( see https://gist.github.com/RishikesavanRamesh/d8c085c958bc11e8562cd3db297e4eb8 )
     command: sleep infinity
     user: developer
+    security_opt:
+      - seccomp:unconfined
+    cap_add:
+      - SYS_PTRACE
     device_cgroup_rules: # (ref https://www.kernel.org/doc/Documentation/admin-guide/devices.txt )
       # first THREE of each of the following types of devices can be used inside the dev container
       - 'c 13:[012] rwm' # Input core ( here joystick only)
