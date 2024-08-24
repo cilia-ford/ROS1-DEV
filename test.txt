@@ -1,5 +1,0 @@
-curl
-vim
-emacs
-firefox
-fastdds

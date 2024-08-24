@@ -1,9 +1,9 @@
 add a readme
 add ros2-devcontaioner like admiring samples ,
 add about windows, codespaces, and linux support, 
-explain the setup , ssh , docker build workflow, and so on .... 
-explain the .env file things and everything else etc ...
-also explain ( yet to be added ) build tasks configurations... 
+**explain the setup , ssh , docker build workflow, and so on** .... :: marked as must
+~~explain the .env file things and everything else etc ...~~ dropped such setting
+~~also explain ( yet to be added ) build tasks configurations... ~~
 might also wanna add linting and batches for verifing features...
 
 
@@ -42,6 +42,24 @@ might also wanna add linting and batches for verifing features...
 - check if adding the user developer to dialout group is needed
 - also add docker security tesing reports convincingly  
 - make the readme open when starting devcontainer
+- opening new terminals is slower ( ros, vulcanexus both are sourcing)
+
+
+- add unminimize for manuals in devcontainer
+
+- add colcon_ignore to all pakcages .gitignore
+
+- add backward_ros in rtw_templates
+- check if the subpackages are working with existing tasks settings
+
+- docker file should be images on diff levels based on the base, simulation, , full, desktop or any other intermediate levels and should be build and exported , thinking in that perspective. eg: desktop may have eclipse trace-compass, but base should not even have unminimized mans.
+
+- use file-server as needed and opt. eg: in the packages print, or in the actions build ( docker file build ) getting the working versions or new install instructions of softwares. as a script. this will increase maintainability
+
+- add build results in readme, which is working and which is not,
+- think of including the simple tracer( from the construct )in full; and the binary should be build in separate repo, and be hosted there, and the getting and install will be using the file-server script.
+
+- add record and play topics, services( from jazzy ) tasks using ros2bag
 ### for later
 
 - EP03 check and find if we can control the default location where the rosdep install python pacakges( using envs) and do multiple versions of things in one program using .dsv.in files' help // solved ; only needed in jazzy 
