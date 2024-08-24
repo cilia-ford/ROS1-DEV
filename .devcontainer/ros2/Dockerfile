@@ -1,4 +1,4 @@
-FROM eprosima/vulcanexus:humble-base
+FROM eprosima/vulcanexus:humble-desktop
 
 # # Install sudo
 RUN <<EOF
