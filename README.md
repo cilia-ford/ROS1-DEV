@@ -30,12 +30,13 @@ might also wanna add linting and batches for verifing features...
 - ~~EP22 add templating from rtworking group into tasks~~
 - ~~EP27 create a list of softwares that are installed in the system , and make that image specific and also show it in the startup or print it on console.~~ 
 
-- EP23 why not mounting everything inside of /tmp/workspace so that one can easily save the contaienr for tools and softwares and the source code remains clean outside of container.
 - ~~revise the post install script,(ssh keys not needed, also rosdep init is also not require, rosdep init should be moved to tasks)~~ :: completed
 
 - ~~Dropped:: EP13 give a robot start script here in the repo, for anyone to just run it and pull the build foss docker image (or probably private docker repo prompting a docker access secret to enter) :: dropped as this setup is entirely for development while this idea is for deployment or demo ~~
+- ~~consider /workspace to /home/developer/workspace and mounting the /home/devloper in the vscode workspacefolder, so the .ros/tracing can be used by the trace viewer ext, and also other dot files can be viewed while still maintaining the git structure for the workspace folder..~~
 
 - EP25 tasks for gdb also 
+- EP23 why not mounting everything inside of /tmp/workspace so that one can easily save the contaienr for tools and softwares and the source code remains clean outside of container.
 
 - EP26 SHOULD ADD THE AUTO LISTING OF DIRS FOR INPUT FOR RTW TASKS
 
@@ -66,7 +67,6 @@ might also wanna add linting and batches for verifing features...
 - ros2tracing should be enabled in linux only and if possible or document its limits for windows
 
 
-- consider /workspace to /home/developer/workspace and mounting the /home/devloper in the vscode workspacefolder, so the .ros/tracing can be used by the trace viewer ext, and also other dot files can be viewed while still maintaining the git structure for the workspace folder..
 
 
 - installing tracecompass-server at /usr/bin/tracecompass-server will make the tracecompass server companion plugin for traccompass viewer

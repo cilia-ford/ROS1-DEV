@@ -3,7 +3,7 @@ services:
     # image: rishikesavanramesh/ros2-dev # change this to your docker image
     build: .
     volumes:
-      - ../../.:/home/developer/workspace/.:rw
+      - ../../.:/workspace/.:rw
       - /tmp/.X11-unix:/tmp/.X11-unix # Expose X11 socket
       # - /dev:/dev:rw
     environment:
