@@ -27,7 +27,7 @@ echo 'source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash' >> ~/.b
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 
 echo -e "\$SSH_KEY" > /home/developer/.ssh/id_rsa && chmod 600 /home/developer/.ssh/id_rsa
-bash /workspace/.scripts/print_packages.bash
+bash /home/developer/workspace/.scripts/print_packages.bash
 EOF
 
 
