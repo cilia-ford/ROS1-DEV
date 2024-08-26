@@ -19,7 +19,9 @@
 				"eamodio.gitlens",
 				"ms-iot.vscode-ros",
 				"ms-azuretools.vscode-docker",
-				"ms-vscode.cmake-tools"
+				"ms-vscode.cmake-tools",
+				"eclipse-cdt.vscode-trace-extension",
+				"eclipse-cdt.vscode-trace-server"
 			]
 		}
 	},
