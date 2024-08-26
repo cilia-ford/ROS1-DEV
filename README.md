@@ -60,12 +60,22 @@ might also wanna add linting and batches for verifing features...
 - think of including the simple tracer( from the construct )in full; and the binary should be build in separate repo, and be hosted there, and the getting and install will be using the file-server script.
 
 - add record and play topics, services( from jazzy ) tasks using ros2bag
+
+- newly installed in system : lttng-modules-dkms ; and unminimized ; also installed ros-humble-tracetools*
+
+- ros2tracing should be enabled in linux only and if possible or document its limits for windows
+
+
+- consider /workspace to /home/developer/workspace and mounting the /home/devloper in the vscode workspacefolder, so the .ros/tracing can be used by the trace viewer ext, and also other dot files can be viewed while still maintaining the git structure for the workspace folder..
+
+
+- installing tracecompass-server at /usr/bin/tracecompass-server will make the tracecompass server companion plugin for traccompass viewer
 ### for later
 
 - EP03 check and find if we can control the default location where the rosdep install python pacakges( using envs) and do multiple versions of things in one program using .dsv.in files' help // solved ; only needed in jazzy 
 - EP17 colcon hooks location updated in jazzy, ( why not maintain two branch )
 - EP20 RSS FEED OF github action builds of ros and other projects
-- EP15 add the platformio within here 
+- EP15 add the platformio, wokwi sim within here 
 
 ## usbip
         - EP08 if codespace add the methods and tools if possible to connect local devices to the codespacee and create a compatible companion script 
