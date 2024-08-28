@@ -72,6 +72,8 @@ might also wanna add linting and batches for verifing features...
 - installing tracecompass-server at /usr/bin/tracecompass-server will make the tracecompass server companion plugin for traccompass viewer
 
 - git username and email has to be configured firstly. then github can be connected with the same vscode account.( github account)
+
+- install xclip for tmux copy paste, icewm also
 ### for later
 
 - EP03 check and find if we can control the default location where the rosdep install python pacakges( using envs) and do multiple versions of things in one program using .dsv.in files' help // solved ; only needed in jazzy 

@@ -17,12 +17,6 @@ RUN mkdir -p /home/developer/.ssh
 COPY <<EOF /post-create-script.sh
 #!/bin/bash
 
-echo 'source /opt/ros/humble/setup.bash' >> ~/.bashrc
-echo 'source /opt/vulcanexus/humble/setup.bash' >> ~/.bashrc
-
-source /opt/ros/humble/setup.bash
-source /opt/vulcanexus/humble/setup.bash
-
 echo 'source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash' >> ~/.bashrc
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 
