@@ -16,9 +16,11 @@ services:
     command: sleep infinity
     user: developer
 
+
+    privileged: true # strictly for development
     security_opt: # strictly for developement 
       - seccomp:unconfined
-    cap_add:
+    cap_add: # strictly for developement 
       - SYS_PTRACE
 
     device_cgroup_rules: # (ref https://www.kernel.org/doc/Documentation/admin-guide/devices.txt )
