@@ -10,6 +10,7 @@ if ! tmux has-session -t $SESSION_NAME 2>/dev/null; then
     # Set up tmux options for the session
     tmux send-keys -t $SESSION_NAME 'tmux set-option prefix C-a' C-m
     tmux send-keys -t $SESSION_NAME 'tmux set-option prefix2 C-b' C-m
+    tmux send-keys -t $SESSION_NAME 'tmux set mouse on' C-m
     tmux send-keys -t $SESSION_NAME 'tmux bind C-c run "tmux save-buffer - | xclip -i -sel clip"' C-m
     tmux send-keys -t $SESSION_NAME 'tmux bind C-v run "tmux set-buffer $(xclip -o -sel clip); tmux paste-buffer"' C-m
 

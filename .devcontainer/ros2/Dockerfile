@@ -3,9 +3,24 @@ FROM eprosima/vulcanexus:humble-desktop
 # # Install sudo
 RUN <<EOF
 apt-get update 
-apt-get install -y sudo openssh-client 
+apt-get install -y sudo openssh-client
+apt-get clean
 rm -rf /var/lib/apt/lists/*
 EOF
+
+## Install additional softwares
+RUN <<EOF
+apt-get update 
+apt-get install -y icewm tmux
+apt-get clean
+rm -rf /var/lib/apt/lists/*
+EOF
+
+
+
+
+
+
 
 # Create a non-root user called "developer" with sudo privileges
 RUN useradd -m -s /bin/bash developer && \
