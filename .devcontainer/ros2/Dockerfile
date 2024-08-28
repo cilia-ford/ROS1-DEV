@@ -11,15 +11,10 @@ EOF
 ## Install additional softwares
 RUN <<EOF
 apt-get update 
-apt-get install -y icewm tmux
+apt-get install -y icewm tmux xclip
 apt-get clean
 rm -rf /var/lib/apt/lists/*
 EOF
-
-
-
-
-
 
 
 # Create a non-root user called "developer" with sudo privileges
@@ -27,18 +22,11 @@ RUN useradd -m -s /bin/bash developer && \
     echo "developer ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
     chown -R developer:developer /home/developer
 
-RUN mkdir -p /home/developer/.ssh
-
 COPY <<EOF /post-create-script.sh
 #!/bin/bash
-
 echo 'source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash' >> ~/.bashrc
-source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
-
-echo -e "\$SSH_KEY" > /home/developer/.ssh/id_rsa && chmod 600 /home/developer/.ssh/id_rsa
 bash /workspace/.scripts/print_packages.bash
 EOF
-
 
 RUN chmod +x /post-create-script.sh
 

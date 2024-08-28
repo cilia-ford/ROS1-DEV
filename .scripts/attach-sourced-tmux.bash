@@ -20,7 +20,7 @@ if ! tmux has-session -t $SESSION_NAME 2>/dev/null; then
     
 
     # Set the default command to source ROS environment and start bash
-    tmux send-keys -t $SESSION_NAME 'tmux set-option default-command "source /opt/ros/humble/setup.bash && exec bash"' C-m
+    tmux send-keys -t $SESSION_NAME 'tmux set-option default-command "[ -f /opt/ros/humble/setup.bash ] && source /opt/ros/humble/setup.bash ; [ -f /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash ] && source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash ; exec bash"' C-m
 
     tmux send-keys -t $SESSION_NAME 'clear ; echo ">>> sourced ros2."' C-m
 
