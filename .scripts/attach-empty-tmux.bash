@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SESSION_NAME="ros2-session"
+SESSION_NAME="unsourced"
 
 # Create a new session if it does not exist
 if ! tmux has-session -t $SESSION_NAME 2>/dev/null; then

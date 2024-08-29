@@ -18,13 +18,14 @@ EOF
 
 
 # Create a non-root user called "developer" with sudo privileges
-RUN useradd -m -s /bin/bash developer && \
-    echo "developer ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
-    chown -R developer:developer /home/developer
+RUN <<EOF
+useradd -m -s /bin/bash developer 
+echo "developer ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers 
+chown -R developer:developer /home/developer
+EOF
 
 COPY <<EOF /post-create-script.sh
 #!/bin/bash
-echo 'source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash' >> ~/.bashrc
 bash /workspace/.scripts/print_packages.bash
 EOF
 
