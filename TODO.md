@@ -74,6 +74,8 @@ might also wanna add linting and batches for verifing features...
 - git username and email has to be configured firstly. then github can be connected with the same vscode account.( github account)
 
 - install xclip for tmux copy paste, icewm also
+
+- add prebuilds for codespace
 ### for later
 
 - EP03 check and find if we can control the default location where the rosdep install python pacakges( using envs) and do multiple versions of things in one program using .dsv.in files' help // solved ; only needed in jazzy 
@@ -140,3 +142,5 @@ developer@6953e98b98e0:/workspace$
 also changed for /etc/sudoers file
 
 ############
+
+using with  priviledged, causes no ros2 transport over dds, with the given xml config.
