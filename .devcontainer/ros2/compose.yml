@@ -8,19 +8,21 @@ services:
       # - /dev:/dev:rw
     environment:
       - DISPLAY=:45 # ( see https://gist.github.com/RishikesavanRamesh/d8c085c958bc11e8562cd3db297e4eb8 )
-      
-      - FASTDDS_DEFAULT_PROFILES_FILE=/fastrtps_default_profiles.xml
-      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
-      - RMW_FASTRTPS_USE_QOS_FROM_XML=1
+
     command: sleep infinity
     user: developer
 
+    # network_mode: host
+    
+    # ipc: host
+    # pid: host
 
-    privileged: true # strictly for development
+
     security_opt: # strictly for developement 
       - seccomp:unconfined
     cap_add: # strictly for developement 
-      - SYS_PTRACE
+      # - SYS_PTRACE
+      - all
 
     device_cgroup_rules: # (ref https://www.kernel.org/doc/Documentation/admin-guide/devices.txt )
       - 'c 13:* rwm'  # Input core ( eg : joystick)
