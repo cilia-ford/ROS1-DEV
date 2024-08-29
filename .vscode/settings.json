@@ -148,14 +148,22 @@
     ],
     "ament-task-provider.envSetup": "source /opt/ros/humble/setup.bash",
     "terminal.integrated.defaultProfile.linux": "Sourced TMUX",
-     "terminal.integrated.profiles.linux": {
+    "terminal.integrated.profiles.linux": {
         "Empty TMUX": {
-          "path": "bash",
-          "args": ["/workspace/.scripts/attach-empty-tmux.bash"],
+            "path": "bash",
+            "args": [
+                "/workspace/.scripts/attach-empty-tmux.bash"
+            ],
         },
         "Sourced TMUX": {
-          "path": "bash",
-          "args": ["/workspace/.scripts/attach-sourced-tmux.bash"],
+            "path": "bash",
+            "args": [
+                "/workspace/.scripts/attach-sourced-tmux.bash"
+            ],
         }
-      }
+    },
+    // "workbench.colorCustomizations": {
+    //     "terminal.foreground": "#00ffb3",
+    //     "terminal.background": "#000000"
+    // }
 }
