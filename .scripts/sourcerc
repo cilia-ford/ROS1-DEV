@@ -4,6 +4,9 @@ source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 
 
       
-FASTDDS_DEFAULT_PROFILES_FILE=/workspace/.scripts/QOS_PROFILES/fastrtps_default_profiles.xml
-RMW_IMPLEMENTATION=rmw_fastrtps_cpp
-RMW_FASTRTPS_USE_QOS_FROM_XML=1
+export FASTDDS_DEFAULT_PROFILES_FILE=/workspace/.scripts/QOS_PROFILES/fastrtps_default_profiles.xml
+export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+export RMW_FASTRTPS_USE_QOS_FROM_XML=1
+
+
+export ROS_TRACE_DIR=/workspace/src/dev/trace
