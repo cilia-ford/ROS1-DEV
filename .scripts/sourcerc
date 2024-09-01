@@ -10,3 +10,9 @@ export RMW_FASTRTPS_USE_QOS_FROM_XML=1
 
 
 export ROS_TRACE_DIR=/workspace/src/dev/trace
+
+source /workspace/install/setup.bash
+
+export GZ_VERSION=harmonic
+
+export DISPLAY=:46

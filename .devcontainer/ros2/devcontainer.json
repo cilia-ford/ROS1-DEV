@@ -22,7 +22,8 @@
 				"ms-vscode.cmake-tools",
 				"eclipse-cdt.vscode-trace-extension",
 				"eclipse-cdt.vscode-trace-server",
-				"redhat.vscode-xml"
+				"redhat.vscode-xml",
+				"ms-toolsai.jupyter"
 			]
 		}
 	},
