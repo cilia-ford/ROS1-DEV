@@ -147,7 +147,7 @@
         ".devcontainer/devcontainer.json"
     ],
     "ament-task-provider.envSetup": "source /opt/ros/humble/setup.bash",
-    "terminal.integrated.defaultProfile.linux": "Sourced TMUX",
+    "terminal.integrated.defaultProfile.linux": "bash",
     "terminal.integrated.profiles.linux": {
         "Empty TMUX": {
             "path": "bash",
