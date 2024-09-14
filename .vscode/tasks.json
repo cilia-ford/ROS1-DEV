@@ -244,7 +244,7 @@
         {
             "id": "dirName",
             "type": "promptString",
-            "description": "Base Directory"
+            "description": "Base Directory, from */src/."
         },
         {
             "id": "descriptionPackageName",
@@ -254,12 +254,12 @@
         {
             "id": "fileName",
             "type": "promptString",
-            "description": "File Name"
+            "description": "FILE_NAME file name used for controller’s .cpp and .hpp files. It assumes standard ROS format, e.g, “my_cool_controller”."
         },
         {
             "id": "className",
             "type": "promptString",
-            "description": "Class Name"
+            "description": "CLASS_NAME optional name used for controller class. If not set, it is guessed by camel-casing the file name."
         }
     ]
 }
