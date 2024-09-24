@@ -1,4 +1,4 @@
-FROM eprosima/vulcanexus:humble-desktop
+FROM docker.io/eprosima/vulcanexus:humble-desktop
 
 # # Install sudo
 RUN <<EOF
@@ -12,6 +12,14 @@ EOF
 RUN <<EOF
 apt-get update 
 apt-get install -y icewm tmux xclip
+apt-get clean
+rm -rf /var/lib/apt/lists/*
+EOF
+
+
+RUN <<EOF
+apt-get update 
+apt-get install -y ros-humble-rmw-cyclonedds-cpp
 apt-get clean
 rm -rf /var/lib/apt/lists/*
 EOF
