@@ -1,6 +1,7 @@
 services:
   ros-dev:
     # image: rishikesavanramesh/ros2-dev # change this to your docker image
+    # image: localhost/ros2_ros-dev # change this to your docker image
     build: .
     volumes:
       - ../../.:/workspace/.:rw
@@ -10,8 +11,6 @@ services:
       - DISPLAY=:45 # ( see https://gist.github.com/RishikesavanRamesh/d8c085c958bc11e8562cd3db297e4eb8 )
 
     command: sleep infinity
-    user: developer
-
     # network_mode: host
     
     # ipc: host
