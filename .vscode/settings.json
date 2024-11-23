@@ -81,7 +81,8 @@
         "cinttypes": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "slist": "cpp"
     },
     "python.analysis.extraPaths": [
         "/opt/ros/humble/lib/python3.10/site-packages/"
@@ -101,7 +102,7 @@
     "C_Cpp.formatting": "disabled",
     "uncrustify.configPath.linux": "/opt/ros/humble/lib/python3.10/site-packages/ament_uncrustify/configuration/ament_code_style.cfg",
     "[cpp]": {
-        "editor.defaultFormatter": "zachflower.uncrustify"
+        "editor.defaultFormatter": "ms-vscode.cpptools"
     },
     "search.exclude": {
         "**/node_modules": true,
@@ -162,6 +163,8 @@
             ],
         }
     },
+    "cmake.sourceDirectory": "/workspace/ros_team_workspace",
+    "C_Cpp.errorSquiggles": "disabled",
     // "workbench.colorCustomizations": {
     //     "terminal.foreground": "#00ffb3",
     //     "terminal.background": "#000000"
