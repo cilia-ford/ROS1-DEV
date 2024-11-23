@@ -50,6 +50,9 @@ services:
 
   zenoh:
     image: eclipse/zenoh-bridge-ros2dds
+    environment:
+      - ROS_DISTRO=humble
+    network_mode: host
     command: -c /conf/zenoh.json5
     volumes:
       - ../../.scripts/config/zenoh:/conf
