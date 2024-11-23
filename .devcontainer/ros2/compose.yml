@@ -40,6 +40,7 @@ services:
     #   - 'c 189:* rwm'   # 1& its alternate devices    
     depends_on:
       - fluentbit
+      - zenoh
 
   fluentbit:
     image: cr.fluentbit.io/fluent/fluent-bit
