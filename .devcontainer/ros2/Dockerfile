@@ -1,9 +1,10 @@
-FROM docker.io/eprosima/vulcanexus:humble-desktop
+# FROM docker.io/eprosima/vulcanexus:humble-desktop
+FROM docker.io/ros:humble
 
 # # Install sudo
 RUN <<EOF
 apt-get update 
-apt-get install -y sudo openssh-client
+apt-get install -y sudo openssh-client rsyslog
 apt-get clean
 rm -rf /var/lib/apt/lists/*
 EOF
@@ -23,6 +24,15 @@ apt-get install -y ros-humble-rmw-cyclonedds-cpp
 apt-get clean
 rm -rf /var/lib/apt/lists/*
 EOF
+
+RUN <<EOF
+echo "deb [trusted=yes] https://download.eclipse.org/zenoh/debian-repo/ /" >> /etc/apt/sources.list 
+apt update
+apt install -y rsyslog curl nano iputils-ping ros-humble-demo-nodes-cpp zenoh-bridge-ros2dds zenoh-backend-filesystem python3-pip python3-venv ros-humble-turtlesim tmate
+apt clean 
+rm -rf /var/lib/apt/lists/*
+EOF
+
 
 
 # Create a non-root user called "developer" with sudo privileges
