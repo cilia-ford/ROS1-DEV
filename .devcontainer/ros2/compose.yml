@@ -7,7 +7,7 @@ services:
 
       - ../../.scripts/config/rsyslog/ros2-logging.conf:/etc/rsyslog.d/ros2-logging.conf
       - ../../.scripts/config/rsyslog/ros2-test.conf:/etc/rsyslog.d/ros2-test.conf
-
+      - /dev/:/dev/
       - /tmp/.X11-unix:/tmp/.X11-unix # Expose X11 socket
       # - /dev/ttyACM0:/dev/ttyACM0
     environment:
@@ -29,8 +29,8 @@ services:
       # - SYS_PTRACE
       - all
 
-    devices:
-      - /dev:/dev
+    # devices:
+    #   - /dev:/dev    (for easy hot plugging use volumes instead)
 
     # device_cgroup_rules: # (ref https://www.kernel.org/doc/Documentation/admin-guide/devices.txt )
     #   - 'c 13:* rwm'  # Input core ( eg : joystick)
