@@ -11,12 +11,13 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix # Expose X11 socket
       # - /dev/ttyACM0:/dev/ttyACM0
     environment:
+      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
       - DISPLAY=:45 # ( see https://gist.github.com/RishikesavanRamesh/d8c085c958bc11e8562cd3db297e4eb8 )
 
     command: sleep infinity
     user: developer
 
-    # network_mode: host
+    network_mode: host
     
     # ipc: host
     # pid: host
