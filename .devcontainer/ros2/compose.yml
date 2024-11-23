@@ -4,8 +4,12 @@ services:
     build: .
     volumes:
       - ../../.:/workspace/.:rw
+
+      - ../../.scripts/config/rsyslog/ros2-logging.conf:/etc/rsyslog.d/ros2-logging.conf
+      - ../../.scripts/config/rsyslog/ros2-test.conf:/etc/rsyslog.d/ros2-test.conf
+
       - /tmp/.X11-unix:/tmp/.X11-unix # Expose X11 socket
-      # - /dev:/dev:rw
+      # - /dev/ttyACM0:/dev/ttyACM0
     environment:
       - DISPLAY=:45 # ( see https://gist.github.com/RishikesavanRamesh/d8c085c958bc11e8562cd3db297e4eb8 )
 
@@ -17,16 +21,28 @@ services:
     # ipc: host
     # pid: host
 
-
-    security_opt: # strictly for developement 
-      - seccomp:unconfined
+    privileged: true
+    # security_opt: # strictly for developement 
+    #   - seccomp:unconfined
     cap_add: # strictly for developement 
       # - SYS_PTRACE
       - all
 
-    device_cgroup_rules: # (ref https://www.kernel.org/doc/Documentation/admin-guide/devices.txt )
-      - 'c 13:* rwm'  # Input core ( eg : joystick)
-      - 'c 166:* rwm' # ACM USB modems 
-      - 'c 167:* rwm'   # & its alternate devices
-      - 'c 188:* rwm' # USB serial converters 
-      - 'c 189:* rwm'   # 1& its alternate devices    
+    devices:
+      - /dev:/dev
+
+    # device_cgroup_rules: # (ref https://www.kernel.org/doc/Documentation/admin-guide/devices.txt )
+    #   - 'c 13:* rwm'  # Input core ( eg : joystick)
+    #   - 'c 166:* rwm' # ACM USB modems 
+    #   - 'c 167:* rwm'   # & its alternate devices
+    #   - 'c 188:* rwm' # USB serial converters 
+    #   - 'c 189:* rwm'   # 1& its alternate devices    
+    depends_on:
+      - fluentbit
+
+  fluentbit:
+    image: cr.fluentbit.io/fluent/fluent-bit
+    command: -c /conf/fluent-bit.conf
+    volumes:
+      - ../../.scripts/config/fluentbit:/conf
+

@@ -1,9 +1,10 @@
-FROM docker.io/eprosima/vulcanexus:humble-desktop
+# FROM docker.io/eprosima/vulcanexus:humble-desktop
+FROM docker.io/ros:humble
 
 # # Install sudo
 RUN <<EOF
 apt-get update 
-apt-get install -y sudo openssh-client
+apt-get install -y sudo openssh-client rsyslog
 apt-get clean
 rm -rf /var/lib/apt/lists/*
 EOF
