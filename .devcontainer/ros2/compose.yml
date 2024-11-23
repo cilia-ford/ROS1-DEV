@@ -47,3 +47,9 @@ services:
     volumes:
       - ../../.scripts/config/fluentbit:/conf
 
+  zenoh:
+    image: eclipse/zenoh-bridge-ros2dds
+    command: -c /conf/zenoh.json5
+    volumes:
+      - ../../.scripts/config/zenoh:/conf
+
