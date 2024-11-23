@@ -6,7 +6,8 @@ include:
 
 services:
   vnc:
-    image: theasp/novnc:latest
+    # image: theasp/novnc:latest
+    image: manojm003/novnc:latest
     environment:
       # Adjust to your screen size
       - DISPLAY_WIDTH=1600
