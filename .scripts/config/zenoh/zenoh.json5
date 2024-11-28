@@ -163,14 +163,14 @@
   //   endpoints: ["tcp/192.168.1.2:7447"],
   // },
 
-  scouting: {
-    multicast: {
-      autoconnect: { router: ["router"] }
-    },
-    gossip: {
-      autoconnect: { router: ["router"] }
-    }
-  },
+//  scouting: {
+  //  multicast: {
+//      autoconnect: { router: ["router"] }
+ //   },
+ //   gossip: {
+ //     autoconnect: { router: ["router"] }
+ //   }
+ //  },
 
   ////
   //// Which endpoints to listen on.
