@@ -1,10 +1,14 @@
-# FROM docker.io/eprosima/vulcanexus:humble-desktop
-FROM docker.io/ros:humble
+# Define the build argument with a default value
+ARG ROS_VERSION=${ROS_VERSION}
 
+# Conditionally set the base image based on the argument
+FROM docker.io/ros:${ROS_VERSION}
+
+ENV SHELL /bin/bash
 # # Install sudo
 RUN <<EOF
 apt-get update 
-apt-get install -y sudo openssh-client rsyslog
+apt-get install -y sudo openssh-client rsyslog python3-pip
 apt-get clean
 rm -rf /var/lib/apt/lists/*
 EOF
@@ -20,16 +24,9 @@ EOF
 
 RUN <<EOF
 apt-get update 
-apt-get install -y ros-humble-rmw-cyclonedds-cpp
+apt-get install -y ros-${ROS_VERSION}-rmw-cyclonedds-cpp
 apt-get clean
 rm -rf /var/lib/apt/lists/*
-EOF
-
-# Create a non-root user called "developer" with sudo privileges
-RUN <<EOF
-useradd -m -s /bin/bash developer 
-echo "developer ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers 
-chown -R developer:developer /home/developer
 EOF
 
 COPY <<EOF /post-create-script.sh
@@ -39,6 +36,6 @@ EOF
 
 RUN chmod +x /post-create-script.sh
 
-USER developer
-
-
+# [Optional] Set the default user. Omit if you want to keep the default as root.
+# USER $USERNAME
+CMD ["/bin/bash"]
