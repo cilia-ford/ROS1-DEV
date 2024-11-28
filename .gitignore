@@ -10,3 +10,5 @@ log
 core
 
 .venv
+
+*/.env
