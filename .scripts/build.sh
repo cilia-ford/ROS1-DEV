@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+source /opt/ros/$ROS_DISTRO/setup.bash
+
 # Set the default build type
 BUILD_TYPE=RelWithDebInfo
 colcon build \
