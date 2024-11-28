@@ -38,22 +38,22 @@ services:
     #   - 'c 167:* rwm'   # & its alternate devices
     #   - 'c 188:* rwm' # USB serial converters 
     #   - 'c 189:* rwm'   # 1& its alternate devices    
-    depends_on:
-      - fluentbit
-      - zenoh
+  #   depends_on:
+  #     - fluentbit
+  #     - zenoh
 
-  fluentbit:
-    image: cr.fluentbit.io/fluent/fluent-bit
-    command: -c /conf/fluent-bit.conf
-    volumes:
-      - ../../.scripts/config/fluentbit:/conf
+  # fluentbit:
+  #   image: cr.fluentbit.io/fluent/fluent-bit
+  #   command: -c /conf/fluent-bit.conf
+  #   volumes:
+  #     - ../../.scripts/config/fluentbit:/conf
 
-  zenoh:
-    image: eclipse/zenoh-bridge-ros2dds
-    environment:
-      - ROS_DISTRO=humble
-    network_mode: host
-    command: -c /conf/zenoh.json5
-    volumes:
-      - ../../.scripts/config/zenoh:/conf
+  # zenoh:
+  #   image: eclipse/zenoh-bridge-ros2dds
+  #   environment:
+  #     - ROS_DISTRO=humble
+  #   network_mode: host
+  #   command: -c /conf/zenoh.json5
+  #   volumes:
+  #     - ../../.scripts/config/zenoh:/conf
 
