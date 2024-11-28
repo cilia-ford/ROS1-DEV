@@ -11,4 +11,4 @@ core
 
 .venv
 
-*/.env
+**/.env
