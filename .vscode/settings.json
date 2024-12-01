@@ -82,7 +82,11 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "slist": "cpp"
+        "slist": "cpp",
+        "charconv": "cpp",
+        "format": "cpp",
+        "span": "cpp",
+        "core": "cpp"
     },
     "python.analysis.extraPaths": [
         "/opt/ros/jazzy/lib/python3.12/site-packages/"
