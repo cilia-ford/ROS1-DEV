@@ -1,6 +1,6 @@
 {
 	"name": "ros-dev",
-	"remoteUser": "developersilver",
+	// "remoteUser": "developer",
 	"dockerComposeFile": [
 		"compose.yml"
 	],

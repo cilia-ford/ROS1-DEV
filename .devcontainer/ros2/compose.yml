@@ -5,7 +5,11 @@ services:
     build: 
       context: .
       args:
-        - ROS_DISTRO=${ROS_DISTRO}
+        ROS_DISTRO: ${ROS_DISTRO}  # You can pass ROS_DISTRO as an environment variable
+        USERNAME: ${USERNAME}      # Pass the username
+        GROUPNAME: ${GROUPNAME}    # Pass the group name
+        GROUP_GID: ${GROUP_GID}    # Pass the group GID
+        USER_UID: ${USER_UID}      # Pass the user UID
     volumes:
       - ../../.:/workspace/.:rw
 
@@ -19,8 +23,8 @@ services:
       - DISPLAY=:45 # ( see https://gist.github.com/RishikesavanRamesh/d8c085c958bc11e8562cd3db297e4eb8 )
 
     command: sleep infinity
-    user: developer
-    network_mode: host
+    user: ${USERNAME}
+    # network_mode: host
     
     # ipc: host
     # pid: host
