@@ -5,11 +5,11 @@ services:
     build: 
       context: .
       args:
-        ROS_DISTRO: ${ROS_DISTRO}  # You can pass ROS_DISTRO as an environment variable
-        USERNAME: ${USERNAME}      # Pass the username
-        GROUPNAME: ${GROUPNAME}    # Pass the group name
-        GROUP_GID: ${GROUP_GID}    # Pass the group GID
-        USER_UID: ${USER_UID}      # Pass the user UID
+        ROS_DISTRO: ${ROS_DISTRO:-humble}  # You can pass ROS_DISTRO as an environment variable
+        USERNAME: ${USERNAME:-developer}      # Pass the username
+        GROUPNAME: ${GROUPNAME:-developer}    # Pass the group name
+        GROUP_GID: ${GROUP_GID:-1000}    # Pass the group GID
+        USER_UID: ${USER_UID:-1000}      # Pass the user UID
     volumes:
       - ../../.:/workspace/.:rw
 
