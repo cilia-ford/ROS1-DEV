@@ -25,7 +25,7 @@ if ! tmux has-session -t $SESSION_NAME 2>/dev/null; then
     tmux send-keys -t $SESSION_NAME 'source /workspace/.scripts/sourcerc' C-m
     
 
-    tmux send-keys -t $SESSION_NAME 'clear ; echo -e ">>> sourced ros2. \n"' C-m
+    tmux send-keys -t $SESSION_NAME 'clear ; echo -e ">>> sourced ros2."' C-m
 
 fi
 
