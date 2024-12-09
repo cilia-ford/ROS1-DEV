@@ -35,8 +35,9 @@ might also wanna add linting and batches for verifing features...
 - ~~Dropped:: EP13 give a robot start script here in the repo, for anyone to just run it and pull the build foss docker image (or probably private docker repo prompting a docker access secret to enter) :: dropped as this setup is entirely for development while this idea is for deployment or demo ~~
 - ~~consider /workspace to /home/developer/workspace and mounting the /home/devloper in the vscode workspacefolder, so the .ros/tracing can be used by the trace viewer ext, and also other dot files can be viewed while still maintaining the git structure for the workspace folder..~~
 
+- ~~EP23 why not mounting everything inside of /tmp/workspace so that one can easily save the contaienr for tools and softwares and the source code remains clean outside of container.~~  this is not needed as commiting containers will not have the mounts.
+
 - EP25 tasks for gdb also 
-- EP23 why not mounting everything inside of /tmp/workspace so that one can easily save the contaienr for tools and softwares and the source code remains clean outside of container.
 
 - EP26 SHOULD ADD THE AUTO LISTING OF DIRS FOR INPUT FOR RTW TASKS
 
