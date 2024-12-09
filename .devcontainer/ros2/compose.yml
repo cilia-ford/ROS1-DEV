@@ -19,6 +19,7 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix # Expose X11 socket
       # - /dev/ttyACM0:/dev/ttyACM0
     environment:
+      - ROS_DOMAIN_ID=3
       - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
       - DISPLAY=:45 # ( see https://gist.github.com/RishikesavanRamesh/d8c085c958bc11e8562cd3db297e4eb8 )
 
@@ -55,12 +56,12 @@ services:
   #   volumes:
   #     - ../../.scripts/config/fluentbit:/conf
 
-  # zenoh:
-  #   image: eclipse/zenoh-bridge-ros2dds
-  #   environment:
-  #     - ROS_DISTRO=humble
-  #   network_mode: host
-  #   command: -c /conf/zenoh.json5
-  #   volumes:
-  #     - ../../.scripts/config/zenoh:/conf
+  zenoh:
+    image: eclipse/zenoh-bridge-ros2dds
+    environment:
+      - ROS_DISTRO=humble
+    network_mode: host
+    command: -c /conf/zenoh.json5
+    volumes:
+      - ../../.scripts/config/zenoh:/conf
 
