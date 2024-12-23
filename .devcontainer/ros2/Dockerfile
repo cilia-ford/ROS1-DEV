@@ -40,7 +40,7 @@ rm -rf /var/lib/apt/lists/*
 EOF
 
 
-RUN userdel ubuntu
+#RUN userdel ubuntu
 RUN groupadd --gid $GROUP_GID $USERNAME
 RUN useradd --uid $USER_UID --gid $GROUP_GID --create-home $USERNAME
 RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME
