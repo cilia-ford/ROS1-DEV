@@ -1,5 +1,5 @@
 # Define the build argument with a default value
-ARG ROS_DISTRO="humble"
+ARG ROS_DISTRO="noetic"
 ARG USERNAME="developer"
 ARG GROUPNAME="developer"
 ARG GROUP_GID="1000"
@@ -32,12 +32,12 @@ rm -rf /var/lib/apt/lists/*
 EOF
 
 
-RUN <<EOF
-apt-get update 
-apt-get install -y ros-${ROS_DISTRO}-rmw-cyclonedds-cpp
-apt-get clean
-rm -rf /var/lib/apt/lists/*
-EOF
+# RUN <<EOF
+# apt-get update 
+# apt-get install -y ros-${ROS_DISTRO}-rmw-cyclonedds-cpp
+# apt-get clean
+# rm -rf /var/lib/apt/lists/*
+# EOF
 
 
 #RUN userdel ubuntu
@@ -45,7 +45,7 @@ RUN groupadd --gid $GROUP_GID $USERNAME
 RUN useradd --uid $USER_UID --gid $GROUP_GID --create-home $USERNAME
 RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME
 RUN chmod 0440 /etc/sudoers.d/$USERNAME
-    
+
 COPY <<EOF /post-create-script.sh
 #!/bin/bash
 bash /workspace/.scripts/print_packages.bash
